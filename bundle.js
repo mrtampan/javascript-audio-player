@@ -1975,6 +1975,7 @@
   selectMusic = document.getElementById("chooseMusic");
   playIndex = 0;
   musicBank = "https://mrtampan.github.io/caem_bank/";
+  var howlcore = [];
   extension = "mp3";
   playBtn.addEventListener("click", playPause);
   nextBtn.addEventListener("click", nextPlay);
@@ -2002,13 +2003,21 @@
     selectMusic.appendChild(df);
   }
   function runHowler() {
-    var howlcore2 = new Howl2({
+    howlcore = new Howl2({
       src: [musicBank + playList[playIndex].source],
       format: ["mp3"],
       onend: onEnd,
       html5: true
     });
-    howlcore2.play();
+    howlcore.play();
+  }
+  function reuseHowler() {
+    howlcore = new Howl2({
+      src: [musicBank + playList[playIndex].source],
+      format: ["mp3"],
+      onend: onEnd,
+      html5: true
+    });
   }
   function playPause() {
     if (howlcore.playing() === false) {
@@ -2022,7 +2031,7 @@
   function chooseMusic() {
     howlcore.stop();
     playIndex = selectMusic.selectedIndex;
-    Howler2.src([musicBank + playList[playIndex].source]);
+    reuseHowler();
     howlcore.play();
     changeTitle();
   }
@@ -2034,11 +2043,13 @@
     howlcore.stop();
     if (playIndex == 0) {
       playIndex = 0;
+      reuseHowler();
       howlcore.play();
       changeTitle();
     } else {
       playIndex = playIndex - 1;
       console.log(playIndex);
+      reuseHowler();
       howlcore.play();
       changeTitle();
     }
@@ -2047,10 +2058,12 @@
     howlcore.stop();
     if (playIndex >= playList.length - 1) {
       playIndex = 0;
+      reuseHowler();
       howlcore.play();
       changeTitle();
     } else {
       playIndex = playIndex + 1;
+      reuseHowler();
       howlcore.play();
       changeTitle();
     }
@@ -2058,10 +2071,12 @@
   var onEnd = function() {
     if (playIndex >= playList.length - 1) {
       playIndex = 0;
+      reuseHowler();
       howlcore.play();
       changeTitle();
     } else {
       playIndex = playIndex + 1;
+      reuseHowler();
       howlcore.play();
       changeTitle();
     }

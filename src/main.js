@@ -28,6 +28,7 @@ selectMusic = document.getElementById('chooseMusic');
 playIndex = 0;
 musicBank = 'https://mrtampan.github.io/caem_bank/';
 // titlePlay.innerText = playList[playIndex];
+var howlcore = [];
 
 // Setting Audio Player
 extension = 'mp3';
@@ -68,13 +69,22 @@ function setOptionMusic() {
 }
 
 function runHowler() {
-  var howlcore = new Howl({
+  howlcore = new Howl({
     src: [musicBank + playList[playIndex].source],
     format: ['mp3'],
     onend: onEnd,
     html5: true,
   });
   howlcore.play();
+}
+
+function reuseHowler() {
+  howlcore = new Howl({
+    src: [musicBank + playList[playIndex].source],
+    format: ['mp3'],
+    onend: onEnd,
+    html5: true,
+  });
 }
 
 function playPause() {
@@ -90,7 +100,7 @@ function playPause() {
 function chooseMusic() {
   howlcore.stop();
   playIndex = selectMusic.selectedIndex;
-  Howler.src([musicBank + playList[playIndex].source]);
+  reuseHowler();
   howlcore.play();
   changeTitle();
 }
@@ -104,11 +114,13 @@ function prevPlay() {
   howlcore.stop();
   if (playIndex == 0) {
     playIndex = 0;
+    reuseHowler();
     howlcore.play();
     changeTitle();
   } else {
     playIndex = playIndex - 1;
     console.log(playIndex);
+    reuseHowler();
     howlcore.play();
     changeTitle();
   }
@@ -118,10 +130,12 @@ function nextPlay() {
   howlcore.stop();
   if (playIndex >= playList.length - 1) {
     playIndex = 0;
+    reuseHowler();
     howlcore.play();
     changeTitle();
   } else {
     playIndex = playIndex + 1;
+    reuseHowler();
     howlcore.play();
     changeTitle();
   }
@@ -130,10 +144,12 @@ function nextPlay() {
 var onEnd = function () {
   if (playIndex >= playList.length - 1) {
     playIndex = 0;
+    reuseHowler();
     howlcore.play();
     changeTitle();
   } else {
     playIndex = playIndex + 1;
+    reuseHowler();
     howlcore.play();
     changeTitle();
   }
