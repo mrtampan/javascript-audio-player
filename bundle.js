@@ -1973,7 +1973,6 @@
   nextBtn = document.getElementById("nextPlay");
   prevBtn = document.getElementById("prevPlay");
   selectMusic = document.getElementById("chooseMusic");
-  modeSwitch = document.getElementsByName("modeS");
   playIndex = 0;
   musicBank = "https://mrtampan.github.io/caem_bank/";
   extension = "mp3";

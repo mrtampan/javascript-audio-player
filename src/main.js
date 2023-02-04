@@ -19,7 +19,6 @@ titlePlay = document.getElementById('titleMusic');
 nextBtn = document.getElementById('nextPlay');
 prevBtn = document.getElementById('prevPlay');
 selectMusic = document.getElementById('chooseMusic');
-modeSwitch = document.getElementsByName('modeS');
 
 // Music Object
 
