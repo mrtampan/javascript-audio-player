@@ -1980,8 +1980,8 @@
   nextBtn.addEventListener("click", nextPlay);
   prevBtn.addEventListener("click", prevPlay);
   selectMusic.addEventListener("change", chooseMusic);
-  function getDataMusic() {
-    fetch(musicBank + "data.json", {
+  async function getDataMusic() {
+    await fetch(musicBank + "data.json", {
       method: "GET"
     }).then((response) => response.json()).then((result) => {
       playList = result.music;
