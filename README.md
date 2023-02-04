@@ -32,7 +32,7 @@ Upload all file to hosting
 - Option Music List
 - Small resource
 
-## DEMO
+## Demo
 
 Audio Player: https://mrtampan.github.io/javascript-audio-player/
 
