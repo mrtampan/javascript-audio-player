@@ -40,8 +40,8 @@ selectMusic.addEventListener('change', chooseMusic);
 
 // Functional
 
-function getDataMusic() {
-  fetch(musicBank + 'data.json', {
+async function getDataMusic() {
+  await fetch(musicBank + 'data.json', {
     method: 'GET',
   })
     .then((response) => response.json())
