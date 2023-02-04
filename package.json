@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "esbuild": "^0.14.27",
-    "howler": "^2.2.3"
+    "howler": "^2.2.3",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "http-server": "^14.1.1"

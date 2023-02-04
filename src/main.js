@@ -3,6 +3,7 @@ var slimSelectKu = new SlimSelect({
 });
 
 const { Howl, Howler } = require('howler');
+const lodash = require('lodash');
 var playBtn,
   playList,
   playIndex,
@@ -47,7 +48,10 @@ async function getDataMusic() {
   })
     .then((response) => response.json())
     .then((result) => {
-      playList = result.music;
+      // shuffle playlist
+      playList = lodash.shuffle(result.music);
+
+      // playlist = result.music;
 
       console.log(result.music);
     })
