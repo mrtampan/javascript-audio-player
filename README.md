@@ -34,7 +34,7 @@ Upload all file to hosting
 
 ## DEMO
 
-Audio Player: https://mrtampan.github.io/jomb-howl/
+Audio Player: https://mrtampan.github.io/javascript-audio-player/
 
 Music List: https://mrtampan.github.io/caem_bank/data.json
 
