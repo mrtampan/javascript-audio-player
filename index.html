@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="app-cover">
+      <div class="bg-artwork"></div>
+      <div class="bg-layer"></div>
+      <div class="player">
+        <div class="player-content">
+          <marquee id="titleMusic"></marquee>
+          <div class="select-div">
+            <select id="chooseMusic"></select>
+          </div>
+          <br />
+          <div style="display: flex">
+            <div class="button" id="prevPlay">Prev</div>
+            <div class="button" id="playPause">Play</div>
+            <div class="button" id="nextPlay">Next</div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="bundle.js"></script>
+</html>

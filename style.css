@@ -1,0 +1,132 @@
+body {
+  font-family: Helvetica, Arial;
+  margin: 0;
+  background-color: #ffeff5;
+}
+
+.app-cover {
+  position: absolute;
+  width: 430px;
+  margin: -4px auto;
+}
+
+.button {
+  padding: 10px;
+  background-color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: -4px auto;
+}
+
+.player {
+  position: relative;
+  height: 100%;
+  z-index: 3;
+}
+
+.bg-artwork {
+  position: fixed;
+  top: -30px;
+  right: -30px;
+  bottom: -30px;
+  left: -30px;
+  background-image: url('https://i.pinimg.com/736x/65/59/5d/65595d1e59732d612ac3ed146e066c1f.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+  z-index: 1;
+}
+
+.player-controls {
+  width: 250px;
+  height: 100%;
+  margin: 0 5px 0 141px;
+  float: right;
+  overflow: hidden;
+}
+
+.bg-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.51;
+  z-index: 2;
+}
+
+.player-content {
+  position: relative;
+  height: 100%;
+  background-color: #000;
+  box-shadow: 0 30px 80px #656565;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.select-div {
+  width: 350px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: -4px auto;
+}
+
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.wrap-radio {
+  display: inline-flex;
+  height: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+}
+.wrap-radio .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+
+input[type='radio'] {
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2 {
+  border-color: #0069d9;
+  background: #0069d9;
+}
+.wrapper .option span {
+  font-size: 12px;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span {
+  color: #fff;
+}
+
+#titleMusic {
+  padding-top: 25px;
+  padding-bottom: 10px;
+  margin: -4px auto;
+  color: #fff;
+}

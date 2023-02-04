@@ -1,0 +1,21 @@
+{
+  "name": "javascript-audio-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "esbuild src/main.js --bundle --outfile=bundle.js",
+    "watch": "esbuild src/main.js --outfile=bundle.js --bundle --minify --watch",
+    "start": "http-server -p 9090"
+  },
+  "author": "mrtampan",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.14.27",
+    "howler": "^2.2.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
