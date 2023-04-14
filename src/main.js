@@ -3,7 +3,7 @@ var slimSelectKu = new SlimSelect({
 });
 
 const { Howl, Howler } = require('howler');
-const lodash = require('lodash');
+const { shuffle } = require('lodash');
 var playBtn,
   playList,
   playIndex,
@@ -12,8 +12,7 @@ var playBtn,
   titlePlay,
   nextBtn,
   prevBtn,
-  selectMusic,
-  musicBank;
+  selectMusic;
 // Set Object References
 playBtn = document.getElementById('playPause');
 titlePlay = document.getElementById('titleMusic');
@@ -23,11 +22,8 @@ selectMusic = document.getElementById('chooseMusic');
 
 // Music Object
 
-// gfriend = ['fever'];
-// twice = ['candypop'];
-// playList = twice.concat(gfriend);
+let musicBank = window.location.origin + '/audio/';
 playIndex = 0;
-musicBank = 'https://mrtampan.github.io/caem_bank/';
 // titlePlay.innerText = playList[playIndex];
 var howlcore = [];
 
@@ -41,7 +37,6 @@ prevBtn.addEventListener('click', prevPlay);
 selectMusic.addEventListener('change', chooseMusic);
 
 // Functional
-
 async function getDataMusic() {
   await fetch(musicBank + 'data.json', {
     method: 'GET',
@@ -49,7 +44,7 @@ async function getDataMusic() {
     .then((response) => response.json())
     .then((result) => {
       // shuffle playlist
-      playList = lodash.shuffle(result.music);
+      playList = shuffle(result.music);
 
       // playlist = result.music;
 

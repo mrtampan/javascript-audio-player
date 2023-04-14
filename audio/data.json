@@ -1,0 +1,20 @@
+{
+  "music": [
+    {
+      "name": "Alan Walker  Dreamer NCS Release",
+      "source": "music1.mp3"
+    },
+    {
+      "name": "ATSMXN XTOM  The Raven NCS Release",
+      "source": "music2.mp3"
+    },
+    {
+      "name": "Millbrook  Overdrive ft Ellerslie NCS Release",
+      "source": "music3.mp3"
+    },
+    {
+      "name": "VØJ  ATSMXN  Blade Fury NCS Release",
+      "source": "music4.mp3"
+    }
+  ]
+}

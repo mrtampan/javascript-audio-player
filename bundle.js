@@ -2675,7 +2675,7 @@
           var realNames = {};
           var dataViewCtorString = toSource(DataView), mapCtorString = toSource(Map), promiseCtorString = toSource(Promise2), setCtorString = toSource(Set), weakMapCtorString = toSource(WeakMap);
           var symbolProto = Symbol ? Symbol.prototype : undefined2, symbolValueOf = symbolProto ? symbolProto.valueOf : undefined2, symbolToString = symbolProto ? symbolProto.toString : undefined2;
-          function lodash2(value) {
+          function lodash(value) {
             if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
               if (value instanceof LodashWrapper) {
                 return value;
@@ -2711,17 +2711,17 @@
             this.__index__ = 0;
             this.__values__ = undefined2;
           }
-          lodash2.templateSettings = {
+          lodash.templateSettings = {
             "escape": reEscape,
             "evaluate": reEvaluate,
             "interpolate": reInterpolate,
             "variable": "",
             "imports": {
-              "_": lodash2
+              "_": lodash
             }
           };
-          lodash2.prototype = baseLodash.prototype;
-          lodash2.prototype.constructor = lodash2;
+          lodash.prototype = baseLodash.prototype;
+          lodash.prototype.constructor = lodash;
           LodashWrapper.prototype = baseCreate(baseLodash.prototype);
           LodashWrapper.prototype.constructor = LodashWrapper;
           function LazyWrapper(value) {
@@ -4628,11 +4628,11 @@
             return result2;
           }
           function getHolder(func) {
-            var object = hasOwnProperty.call(lodash2, "placeholder") ? lodash2 : func;
+            var object = hasOwnProperty.call(lodash, "placeholder") ? lodash : func;
             return object.placeholder;
           }
           function getIteratee() {
-            var result2 = lodash2.iteratee || iteratee;
+            var result2 = lodash.iteratee || iteratee;
             result2 = result2 === iteratee ? baseIteratee : result2;
             return arguments.length ? result2(arguments[0], arguments[1]) : result2;
           }
@@ -4835,7 +4835,7 @@
             return type == "string" || type == "number" || type == "symbol" || type == "boolean" ? value !== "__proto__" : value === null;
           }
           function isLaziable(func) {
-            var funcName = getFuncName(func), other = lodash2[funcName];
+            var funcName = getFuncName(func), other = lodash[funcName];
             if (typeof other != "function" || !(funcName in LazyWrapper.prototype)) {
               return false;
             }
@@ -5436,7 +5436,7 @@
             return unzipWith(arrays, iteratee2);
           });
           function chain(value) {
-            var result2 = lodash2(value);
+            var result2 = lodash(value);
             result2.__chain__ = true;
             return result2;
           }
@@ -5631,7 +5631,7 @@
             var func = isArray(collection) ? arraySampleSize : baseSampleSize;
             return func(collection, n);
           }
-          function shuffle(collection) {
+          function shuffle2(collection) {
             var func = isArray(collection) ? arrayShuffle : baseShuffle;
             return func(collection);
           }
@@ -6552,7 +6552,7 @@
             return string.slice(position, position + target.length) == target;
           }
           function template(string, options, guard) {
-            var settings = lodash2.templateSettings;
+            var settings = lodash.templateSettings;
             if (guard && isIterateeCall(string, options, guard)) {
               options = undefined2;
             }
@@ -6901,324 +6901,324 @@
           function sumBy(array, iteratee2) {
             return array && array.length ? baseSum(array, getIteratee(iteratee2, 2)) : 0;
           }
-          lodash2.after = after;
-          lodash2.ary = ary;
-          lodash2.assign = assign;
-          lodash2.assignIn = assignIn;
-          lodash2.assignInWith = assignInWith;
-          lodash2.assignWith = assignWith;
-          lodash2.at = at;
-          lodash2.before = before;
-          lodash2.bind = bind;
-          lodash2.bindAll = bindAll;
-          lodash2.bindKey = bindKey;
-          lodash2.castArray = castArray;
-          lodash2.chain = chain;
-          lodash2.chunk = chunk;
-          lodash2.compact = compact;
-          lodash2.concat = concat;
-          lodash2.cond = cond;
-          lodash2.conforms = conforms;
-          lodash2.constant = constant;
-          lodash2.countBy = countBy;
-          lodash2.create = create;
-          lodash2.curry = curry;
-          lodash2.curryRight = curryRight;
-          lodash2.debounce = debounce;
-          lodash2.defaults = defaults;
-          lodash2.defaultsDeep = defaultsDeep;
-          lodash2.defer = defer;
-          lodash2.delay = delay;
-          lodash2.difference = difference;
-          lodash2.differenceBy = differenceBy;
-          lodash2.differenceWith = differenceWith;
-          lodash2.drop = drop;
-          lodash2.dropRight = dropRight;
-          lodash2.dropRightWhile = dropRightWhile;
-          lodash2.dropWhile = dropWhile;
-          lodash2.fill = fill;
-          lodash2.filter = filter;
-          lodash2.flatMap = flatMap;
-          lodash2.flatMapDeep = flatMapDeep;
-          lodash2.flatMapDepth = flatMapDepth;
-          lodash2.flatten = flatten;
-          lodash2.flattenDeep = flattenDeep;
-          lodash2.flattenDepth = flattenDepth;
-          lodash2.flip = flip;
-          lodash2.flow = flow;
-          lodash2.flowRight = flowRight;
-          lodash2.fromPairs = fromPairs;
-          lodash2.functions = functions;
-          lodash2.functionsIn = functionsIn;
-          lodash2.groupBy = groupBy;
-          lodash2.initial = initial;
-          lodash2.intersection = intersection;
-          lodash2.intersectionBy = intersectionBy;
-          lodash2.intersectionWith = intersectionWith;
-          lodash2.invert = invert;
-          lodash2.invertBy = invertBy;
-          lodash2.invokeMap = invokeMap;
-          lodash2.iteratee = iteratee;
-          lodash2.keyBy = keyBy;
-          lodash2.keys = keys;
-          lodash2.keysIn = keysIn;
-          lodash2.map = map;
-          lodash2.mapKeys = mapKeys;
-          lodash2.mapValues = mapValues;
-          lodash2.matches = matches;
-          lodash2.matchesProperty = matchesProperty;
-          lodash2.memoize = memoize;
-          lodash2.merge = merge;
-          lodash2.mergeWith = mergeWith;
-          lodash2.method = method;
-          lodash2.methodOf = methodOf;
-          lodash2.mixin = mixin;
-          lodash2.negate = negate;
-          lodash2.nthArg = nthArg;
-          lodash2.omit = omit;
-          lodash2.omitBy = omitBy;
-          lodash2.once = once;
-          lodash2.orderBy = orderBy;
-          lodash2.over = over;
-          lodash2.overArgs = overArgs;
-          lodash2.overEvery = overEvery;
-          lodash2.overSome = overSome;
-          lodash2.partial = partial;
-          lodash2.partialRight = partialRight;
-          lodash2.partition = partition;
-          lodash2.pick = pick;
-          lodash2.pickBy = pickBy;
-          lodash2.property = property;
-          lodash2.propertyOf = propertyOf;
-          lodash2.pull = pull;
-          lodash2.pullAll = pullAll;
-          lodash2.pullAllBy = pullAllBy;
-          lodash2.pullAllWith = pullAllWith;
-          lodash2.pullAt = pullAt;
-          lodash2.range = range;
-          lodash2.rangeRight = rangeRight;
-          lodash2.rearg = rearg;
-          lodash2.reject = reject;
-          lodash2.remove = remove;
-          lodash2.rest = rest;
-          lodash2.reverse = reverse;
-          lodash2.sampleSize = sampleSize;
-          lodash2.set = set;
-          lodash2.setWith = setWith;
-          lodash2.shuffle = shuffle;
-          lodash2.slice = slice;
-          lodash2.sortBy = sortBy;
-          lodash2.sortedUniq = sortedUniq;
-          lodash2.sortedUniqBy = sortedUniqBy;
-          lodash2.split = split;
-          lodash2.spread = spread;
-          lodash2.tail = tail;
-          lodash2.take = take;
-          lodash2.takeRight = takeRight;
-          lodash2.takeRightWhile = takeRightWhile;
-          lodash2.takeWhile = takeWhile;
-          lodash2.tap = tap;
-          lodash2.throttle = throttle;
-          lodash2.thru = thru;
-          lodash2.toArray = toArray;
-          lodash2.toPairs = toPairs;
-          lodash2.toPairsIn = toPairsIn;
-          lodash2.toPath = toPath;
-          lodash2.toPlainObject = toPlainObject;
-          lodash2.transform = transform;
-          lodash2.unary = unary;
-          lodash2.union = union;
-          lodash2.unionBy = unionBy;
-          lodash2.unionWith = unionWith;
-          lodash2.uniq = uniq;
-          lodash2.uniqBy = uniqBy;
-          lodash2.uniqWith = uniqWith;
-          lodash2.unset = unset;
-          lodash2.unzip = unzip;
-          lodash2.unzipWith = unzipWith;
-          lodash2.update = update;
-          lodash2.updateWith = updateWith;
-          lodash2.values = values;
-          lodash2.valuesIn = valuesIn;
-          lodash2.without = without;
-          lodash2.words = words;
-          lodash2.wrap = wrap;
-          lodash2.xor = xor;
-          lodash2.xorBy = xorBy;
-          lodash2.xorWith = xorWith;
-          lodash2.zip = zip;
-          lodash2.zipObject = zipObject;
-          lodash2.zipObjectDeep = zipObjectDeep;
-          lodash2.zipWith = zipWith;
-          lodash2.entries = toPairs;
-          lodash2.entriesIn = toPairsIn;
-          lodash2.extend = assignIn;
-          lodash2.extendWith = assignInWith;
-          mixin(lodash2, lodash2);
-          lodash2.add = add;
-          lodash2.attempt = attempt;
-          lodash2.camelCase = camelCase;
-          lodash2.capitalize = capitalize;
-          lodash2.ceil = ceil;
-          lodash2.clamp = clamp;
-          lodash2.clone = clone;
-          lodash2.cloneDeep = cloneDeep;
-          lodash2.cloneDeepWith = cloneDeepWith;
-          lodash2.cloneWith = cloneWith;
-          lodash2.conformsTo = conformsTo;
-          lodash2.deburr = deburr;
-          lodash2.defaultTo = defaultTo;
-          lodash2.divide = divide;
-          lodash2.endsWith = endsWith;
-          lodash2.eq = eq;
-          lodash2.escape = escape;
-          lodash2.escapeRegExp = escapeRegExp;
-          lodash2.every = every;
-          lodash2.find = find;
-          lodash2.findIndex = findIndex;
-          lodash2.findKey = findKey;
-          lodash2.findLast = findLast;
-          lodash2.findLastIndex = findLastIndex;
-          lodash2.findLastKey = findLastKey;
-          lodash2.floor = floor;
-          lodash2.forEach = forEach;
-          lodash2.forEachRight = forEachRight;
-          lodash2.forIn = forIn;
-          lodash2.forInRight = forInRight;
-          lodash2.forOwn = forOwn;
-          lodash2.forOwnRight = forOwnRight;
-          lodash2.get = get;
-          lodash2.gt = gt;
-          lodash2.gte = gte;
-          lodash2.has = has;
-          lodash2.hasIn = hasIn;
-          lodash2.head = head;
-          lodash2.identity = identity;
-          lodash2.includes = includes;
-          lodash2.indexOf = indexOf;
-          lodash2.inRange = inRange;
-          lodash2.invoke = invoke;
-          lodash2.isArguments = isArguments;
-          lodash2.isArray = isArray;
-          lodash2.isArrayBuffer = isArrayBuffer;
-          lodash2.isArrayLike = isArrayLike;
-          lodash2.isArrayLikeObject = isArrayLikeObject;
-          lodash2.isBoolean = isBoolean;
-          lodash2.isBuffer = isBuffer;
-          lodash2.isDate = isDate;
-          lodash2.isElement = isElement;
-          lodash2.isEmpty = isEmpty;
-          lodash2.isEqual = isEqual;
-          lodash2.isEqualWith = isEqualWith;
-          lodash2.isError = isError;
-          lodash2.isFinite = isFinite;
-          lodash2.isFunction = isFunction;
-          lodash2.isInteger = isInteger;
-          lodash2.isLength = isLength;
-          lodash2.isMap = isMap;
-          lodash2.isMatch = isMatch;
-          lodash2.isMatchWith = isMatchWith;
-          lodash2.isNaN = isNaN2;
-          lodash2.isNative = isNative;
-          lodash2.isNil = isNil;
-          lodash2.isNull = isNull;
-          lodash2.isNumber = isNumber;
-          lodash2.isObject = isObject;
-          lodash2.isObjectLike = isObjectLike;
-          lodash2.isPlainObject = isPlainObject;
-          lodash2.isRegExp = isRegExp;
-          lodash2.isSafeInteger = isSafeInteger;
-          lodash2.isSet = isSet;
-          lodash2.isString = isString;
-          lodash2.isSymbol = isSymbol;
-          lodash2.isTypedArray = isTypedArray;
-          lodash2.isUndefined = isUndefined;
-          lodash2.isWeakMap = isWeakMap;
-          lodash2.isWeakSet = isWeakSet;
-          lodash2.join = join;
-          lodash2.kebabCase = kebabCase;
-          lodash2.last = last;
-          lodash2.lastIndexOf = lastIndexOf;
-          lodash2.lowerCase = lowerCase;
-          lodash2.lowerFirst = lowerFirst;
-          lodash2.lt = lt;
-          lodash2.lte = lte;
-          lodash2.max = max;
-          lodash2.maxBy = maxBy;
-          lodash2.mean = mean;
-          lodash2.meanBy = meanBy;
-          lodash2.min = min;
-          lodash2.minBy = minBy;
-          lodash2.stubArray = stubArray;
-          lodash2.stubFalse = stubFalse;
-          lodash2.stubObject = stubObject;
-          lodash2.stubString = stubString;
-          lodash2.stubTrue = stubTrue;
-          lodash2.multiply = multiply;
-          lodash2.nth = nth;
-          lodash2.noConflict = noConflict;
-          lodash2.noop = noop;
-          lodash2.now = now;
-          lodash2.pad = pad;
-          lodash2.padEnd = padEnd;
-          lodash2.padStart = padStart;
-          lodash2.parseInt = parseInt2;
-          lodash2.random = random;
-          lodash2.reduce = reduce;
-          lodash2.reduceRight = reduceRight;
-          lodash2.repeat = repeat;
-          lodash2.replace = replace;
-          lodash2.result = result;
-          lodash2.round = round;
-          lodash2.runInContext = runInContext2;
-          lodash2.sample = sample;
-          lodash2.size = size;
-          lodash2.snakeCase = snakeCase;
-          lodash2.some = some;
-          lodash2.sortedIndex = sortedIndex;
-          lodash2.sortedIndexBy = sortedIndexBy;
-          lodash2.sortedIndexOf = sortedIndexOf;
-          lodash2.sortedLastIndex = sortedLastIndex;
-          lodash2.sortedLastIndexBy = sortedLastIndexBy;
-          lodash2.sortedLastIndexOf = sortedLastIndexOf;
-          lodash2.startCase = startCase;
-          lodash2.startsWith = startsWith;
-          lodash2.subtract = subtract;
-          lodash2.sum = sum;
-          lodash2.sumBy = sumBy;
-          lodash2.template = template;
-          lodash2.times = times;
-          lodash2.toFinite = toFinite;
-          lodash2.toInteger = toInteger;
-          lodash2.toLength = toLength;
-          lodash2.toLower = toLower;
-          lodash2.toNumber = toNumber;
-          lodash2.toSafeInteger = toSafeInteger;
-          lodash2.toString = toString;
-          lodash2.toUpper = toUpper;
-          lodash2.trim = trim;
-          lodash2.trimEnd = trimEnd;
-          lodash2.trimStart = trimStart;
-          lodash2.truncate = truncate;
-          lodash2.unescape = unescape;
-          lodash2.uniqueId = uniqueId;
-          lodash2.upperCase = upperCase;
-          lodash2.upperFirst = upperFirst;
-          lodash2.each = forEach;
-          lodash2.eachRight = forEachRight;
-          lodash2.first = head;
-          mixin(lodash2, function() {
+          lodash.after = after;
+          lodash.ary = ary;
+          lodash.assign = assign;
+          lodash.assignIn = assignIn;
+          lodash.assignInWith = assignInWith;
+          lodash.assignWith = assignWith;
+          lodash.at = at;
+          lodash.before = before;
+          lodash.bind = bind;
+          lodash.bindAll = bindAll;
+          lodash.bindKey = bindKey;
+          lodash.castArray = castArray;
+          lodash.chain = chain;
+          lodash.chunk = chunk;
+          lodash.compact = compact;
+          lodash.concat = concat;
+          lodash.cond = cond;
+          lodash.conforms = conforms;
+          lodash.constant = constant;
+          lodash.countBy = countBy;
+          lodash.create = create;
+          lodash.curry = curry;
+          lodash.curryRight = curryRight;
+          lodash.debounce = debounce;
+          lodash.defaults = defaults;
+          lodash.defaultsDeep = defaultsDeep;
+          lodash.defer = defer;
+          lodash.delay = delay;
+          lodash.difference = difference;
+          lodash.differenceBy = differenceBy;
+          lodash.differenceWith = differenceWith;
+          lodash.drop = drop;
+          lodash.dropRight = dropRight;
+          lodash.dropRightWhile = dropRightWhile;
+          lodash.dropWhile = dropWhile;
+          lodash.fill = fill;
+          lodash.filter = filter;
+          lodash.flatMap = flatMap;
+          lodash.flatMapDeep = flatMapDeep;
+          lodash.flatMapDepth = flatMapDepth;
+          lodash.flatten = flatten;
+          lodash.flattenDeep = flattenDeep;
+          lodash.flattenDepth = flattenDepth;
+          lodash.flip = flip;
+          lodash.flow = flow;
+          lodash.flowRight = flowRight;
+          lodash.fromPairs = fromPairs;
+          lodash.functions = functions;
+          lodash.functionsIn = functionsIn;
+          lodash.groupBy = groupBy;
+          lodash.initial = initial;
+          lodash.intersection = intersection;
+          lodash.intersectionBy = intersectionBy;
+          lodash.intersectionWith = intersectionWith;
+          lodash.invert = invert;
+          lodash.invertBy = invertBy;
+          lodash.invokeMap = invokeMap;
+          lodash.iteratee = iteratee;
+          lodash.keyBy = keyBy;
+          lodash.keys = keys;
+          lodash.keysIn = keysIn;
+          lodash.map = map;
+          lodash.mapKeys = mapKeys;
+          lodash.mapValues = mapValues;
+          lodash.matches = matches;
+          lodash.matchesProperty = matchesProperty;
+          lodash.memoize = memoize;
+          lodash.merge = merge;
+          lodash.mergeWith = mergeWith;
+          lodash.method = method;
+          lodash.methodOf = methodOf;
+          lodash.mixin = mixin;
+          lodash.negate = negate;
+          lodash.nthArg = nthArg;
+          lodash.omit = omit;
+          lodash.omitBy = omitBy;
+          lodash.once = once;
+          lodash.orderBy = orderBy;
+          lodash.over = over;
+          lodash.overArgs = overArgs;
+          lodash.overEvery = overEvery;
+          lodash.overSome = overSome;
+          lodash.partial = partial;
+          lodash.partialRight = partialRight;
+          lodash.partition = partition;
+          lodash.pick = pick;
+          lodash.pickBy = pickBy;
+          lodash.property = property;
+          lodash.propertyOf = propertyOf;
+          lodash.pull = pull;
+          lodash.pullAll = pullAll;
+          lodash.pullAllBy = pullAllBy;
+          lodash.pullAllWith = pullAllWith;
+          lodash.pullAt = pullAt;
+          lodash.range = range;
+          lodash.rangeRight = rangeRight;
+          lodash.rearg = rearg;
+          lodash.reject = reject;
+          lodash.remove = remove;
+          lodash.rest = rest;
+          lodash.reverse = reverse;
+          lodash.sampleSize = sampleSize;
+          lodash.set = set;
+          lodash.setWith = setWith;
+          lodash.shuffle = shuffle2;
+          lodash.slice = slice;
+          lodash.sortBy = sortBy;
+          lodash.sortedUniq = sortedUniq;
+          lodash.sortedUniqBy = sortedUniqBy;
+          lodash.split = split;
+          lodash.spread = spread;
+          lodash.tail = tail;
+          lodash.take = take;
+          lodash.takeRight = takeRight;
+          lodash.takeRightWhile = takeRightWhile;
+          lodash.takeWhile = takeWhile;
+          lodash.tap = tap;
+          lodash.throttle = throttle;
+          lodash.thru = thru;
+          lodash.toArray = toArray;
+          lodash.toPairs = toPairs;
+          lodash.toPairsIn = toPairsIn;
+          lodash.toPath = toPath;
+          lodash.toPlainObject = toPlainObject;
+          lodash.transform = transform;
+          lodash.unary = unary;
+          lodash.union = union;
+          lodash.unionBy = unionBy;
+          lodash.unionWith = unionWith;
+          lodash.uniq = uniq;
+          lodash.uniqBy = uniqBy;
+          lodash.uniqWith = uniqWith;
+          lodash.unset = unset;
+          lodash.unzip = unzip;
+          lodash.unzipWith = unzipWith;
+          lodash.update = update;
+          lodash.updateWith = updateWith;
+          lodash.values = values;
+          lodash.valuesIn = valuesIn;
+          lodash.without = without;
+          lodash.words = words;
+          lodash.wrap = wrap;
+          lodash.xor = xor;
+          lodash.xorBy = xorBy;
+          lodash.xorWith = xorWith;
+          lodash.zip = zip;
+          lodash.zipObject = zipObject;
+          lodash.zipObjectDeep = zipObjectDeep;
+          lodash.zipWith = zipWith;
+          lodash.entries = toPairs;
+          lodash.entriesIn = toPairsIn;
+          lodash.extend = assignIn;
+          lodash.extendWith = assignInWith;
+          mixin(lodash, lodash);
+          lodash.add = add;
+          lodash.attempt = attempt;
+          lodash.camelCase = camelCase;
+          lodash.capitalize = capitalize;
+          lodash.ceil = ceil;
+          lodash.clamp = clamp;
+          lodash.clone = clone;
+          lodash.cloneDeep = cloneDeep;
+          lodash.cloneDeepWith = cloneDeepWith;
+          lodash.cloneWith = cloneWith;
+          lodash.conformsTo = conformsTo;
+          lodash.deburr = deburr;
+          lodash.defaultTo = defaultTo;
+          lodash.divide = divide;
+          lodash.endsWith = endsWith;
+          lodash.eq = eq;
+          lodash.escape = escape;
+          lodash.escapeRegExp = escapeRegExp;
+          lodash.every = every;
+          lodash.find = find;
+          lodash.findIndex = findIndex;
+          lodash.findKey = findKey;
+          lodash.findLast = findLast;
+          lodash.findLastIndex = findLastIndex;
+          lodash.findLastKey = findLastKey;
+          lodash.floor = floor;
+          lodash.forEach = forEach;
+          lodash.forEachRight = forEachRight;
+          lodash.forIn = forIn;
+          lodash.forInRight = forInRight;
+          lodash.forOwn = forOwn;
+          lodash.forOwnRight = forOwnRight;
+          lodash.get = get;
+          lodash.gt = gt;
+          lodash.gte = gte;
+          lodash.has = has;
+          lodash.hasIn = hasIn;
+          lodash.head = head;
+          lodash.identity = identity;
+          lodash.includes = includes;
+          lodash.indexOf = indexOf;
+          lodash.inRange = inRange;
+          lodash.invoke = invoke;
+          lodash.isArguments = isArguments;
+          lodash.isArray = isArray;
+          lodash.isArrayBuffer = isArrayBuffer;
+          lodash.isArrayLike = isArrayLike;
+          lodash.isArrayLikeObject = isArrayLikeObject;
+          lodash.isBoolean = isBoolean;
+          lodash.isBuffer = isBuffer;
+          lodash.isDate = isDate;
+          lodash.isElement = isElement;
+          lodash.isEmpty = isEmpty;
+          lodash.isEqual = isEqual;
+          lodash.isEqualWith = isEqualWith;
+          lodash.isError = isError;
+          lodash.isFinite = isFinite;
+          lodash.isFunction = isFunction;
+          lodash.isInteger = isInteger;
+          lodash.isLength = isLength;
+          lodash.isMap = isMap;
+          lodash.isMatch = isMatch;
+          lodash.isMatchWith = isMatchWith;
+          lodash.isNaN = isNaN2;
+          lodash.isNative = isNative;
+          lodash.isNil = isNil;
+          lodash.isNull = isNull;
+          lodash.isNumber = isNumber;
+          lodash.isObject = isObject;
+          lodash.isObjectLike = isObjectLike;
+          lodash.isPlainObject = isPlainObject;
+          lodash.isRegExp = isRegExp;
+          lodash.isSafeInteger = isSafeInteger;
+          lodash.isSet = isSet;
+          lodash.isString = isString;
+          lodash.isSymbol = isSymbol;
+          lodash.isTypedArray = isTypedArray;
+          lodash.isUndefined = isUndefined;
+          lodash.isWeakMap = isWeakMap;
+          lodash.isWeakSet = isWeakSet;
+          lodash.join = join;
+          lodash.kebabCase = kebabCase;
+          lodash.last = last;
+          lodash.lastIndexOf = lastIndexOf;
+          lodash.lowerCase = lowerCase;
+          lodash.lowerFirst = lowerFirst;
+          lodash.lt = lt;
+          lodash.lte = lte;
+          lodash.max = max;
+          lodash.maxBy = maxBy;
+          lodash.mean = mean;
+          lodash.meanBy = meanBy;
+          lodash.min = min;
+          lodash.minBy = minBy;
+          lodash.stubArray = stubArray;
+          lodash.stubFalse = stubFalse;
+          lodash.stubObject = stubObject;
+          lodash.stubString = stubString;
+          lodash.stubTrue = stubTrue;
+          lodash.multiply = multiply;
+          lodash.nth = nth;
+          lodash.noConflict = noConflict;
+          lodash.noop = noop;
+          lodash.now = now;
+          lodash.pad = pad;
+          lodash.padEnd = padEnd;
+          lodash.padStart = padStart;
+          lodash.parseInt = parseInt2;
+          lodash.random = random;
+          lodash.reduce = reduce;
+          lodash.reduceRight = reduceRight;
+          lodash.repeat = repeat;
+          lodash.replace = replace;
+          lodash.result = result;
+          lodash.round = round;
+          lodash.runInContext = runInContext2;
+          lodash.sample = sample;
+          lodash.size = size;
+          lodash.snakeCase = snakeCase;
+          lodash.some = some;
+          lodash.sortedIndex = sortedIndex;
+          lodash.sortedIndexBy = sortedIndexBy;
+          lodash.sortedIndexOf = sortedIndexOf;
+          lodash.sortedLastIndex = sortedLastIndex;
+          lodash.sortedLastIndexBy = sortedLastIndexBy;
+          lodash.sortedLastIndexOf = sortedLastIndexOf;
+          lodash.startCase = startCase;
+          lodash.startsWith = startsWith;
+          lodash.subtract = subtract;
+          lodash.sum = sum;
+          lodash.sumBy = sumBy;
+          lodash.template = template;
+          lodash.times = times;
+          lodash.toFinite = toFinite;
+          lodash.toInteger = toInteger;
+          lodash.toLength = toLength;
+          lodash.toLower = toLower;
+          lodash.toNumber = toNumber;
+          lodash.toSafeInteger = toSafeInteger;
+          lodash.toString = toString;
+          lodash.toUpper = toUpper;
+          lodash.trim = trim;
+          lodash.trimEnd = trimEnd;
+          lodash.trimStart = trimStart;
+          lodash.truncate = truncate;
+          lodash.unescape = unescape;
+          lodash.uniqueId = uniqueId;
+          lodash.upperCase = upperCase;
+          lodash.upperFirst = upperFirst;
+          lodash.each = forEach;
+          lodash.eachRight = forEachRight;
+          lodash.first = head;
+          mixin(lodash, function() {
             var source = {};
-            baseForOwn(lodash2, function(func, methodName) {
-              if (!hasOwnProperty.call(lodash2.prototype, methodName)) {
+            baseForOwn(lodash, function(func, methodName) {
+              if (!hasOwnProperty.call(lodash.prototype, methodName)) {
                 source[methodName] = func;
               }
             });
             return source;
           }(), { "chain": false });
-          lodash2.VERSION = VERSION;
+          lodash.VERSION = VERSION;
           arrayEach(["bind", "bindKey", "curry", "curryRight", "partial", "partialRight"], function(methodName) {
-            lodash2[methodName].placeholder = lodash2;
+            lodash[methodName].placeholder = lodash;
           });
           arrayEach(["drop", "take"], function(methodName, index) {
             LazyWrapper.prototype[methodName] = function(n) {
@@ -7306,14 +7306,14 @@
             return this.take(MAX_ARRAY_LENGTH);
           };
           baseForOwn(LazyWrapper.prototype, function(func, methodName) {
-            var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName), isTaker = /^(?:head|last)$/.test(methodName), lodashFunc = lodash2[isTaker ? "take" + (methodName == "last" ? "Right" : "") : methodName], retUnwrapped = isTaker || /^find/.test(methodName);
+            var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName), isTaker = /^(?:head|last)$/.test(methodName), lodashFunc = lodash[isTaker ? "take" + (methodName == "last" ? "Right" : "") : methodName], retUnwrapped = isTaker || /^find/.test(methodName);
             if (!lodashFunc) {
               return;
             }
-            lodash2.prototype[methodName] = function() {
+            lodash.prototype[methodName] = function() {
               var value = this.__wrapped__, args = isTaker ? [1] : arguments, isLazy = value instanceof LazyWrapper, iteratee2 = args[0], useLazy = isLazy || isArray(value);
               var interceptor = function(value2) {
-                var result3 = lodashFunc.apply(lodash2, arrayPush([value2], args));
+                var result3 = lodashFunc.apply(lodash, arrayPush([value2], args));
                 return isTaker && chainAll ? result3[0] : result3;
               };
               if (useLazy && checkIteratee && typeof iteratee2 == "function" && iteratee2.length != 1) {
@@ -7335,7 +7335,7 @@
           });
           arrayEach(["pop", "push", "shift", "sort", "splice", "unshift"], function(methodName) {
             var func = arrayProto[methodName], chainName = /^(?:push|sort|unshift)$/.test(methodName) ? "tap" : "thru", retUnwrapped = /^(?:pop|shift)$/.test(methodName);
-            lodash2.prototype[methodName] = function() {
+            lodash.prototype[methodName] = function() {
               var args = arguments;
               if (retUnwrapped && !this.__chain__) {
                 var value = this.value();
@@ -7347,7 +7347,7 @@
             };
           });
           baseForOwn(LazyWrapper.prototype, function(func, methodName) {
-            var lodashFunc = lodash2[methodName];
+            var lodashFunc = lodash[methodName];
             if (lodashFunc) {
               var key = lodashFunc.name + "";
               if (!hasOwnProperty.call(realNames, key)) {
@@ -7363,18 +7363,18 @@
           LazyWrapper.prototype.clone = lazyClone;
           LazyWrapper.prototype.reverse = lazyReverse;
           LazyWrapper.prototype.value = lazyValue;
-          lodash2.prototype.at = wrapperAt;
-          lodash2.prototype.chain = wrapperChain;
-          lodash2.prototype.commit = wrapperCommit;
-          lodash2.prototype.next = wrapperNext;
-          lodash2.prototype.plant = wrapperPlant;
-          lodash2.prototype.reverse = wrapperReverse;
-          lodash2.prototype.toJSON = lodash2.prototype.valueOf = lodash2.prototype.value = wrapperValue;
-          lodash2.prototype.first = lodash2.prototype.head;
+          lodash.prototype.at = wrapperAt;
+          lodash.prototype.chain = wrapperChain;
+          lodash.prototype.commit = wrapperCommit;
+          lodash.prototype.next = wrapperNext;
+          lodash.prototype.plant = wrapperPlant;
+          lodash.prototype.reverse = wrapperReverse;
+          lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
+          lodash.prototype.first = lodash.prototype.head;
           if (symIterator) {
-            lodash2.prototype[symIterator] = wrapperToIterator;
+            lodash.prototype[symIterator] = wrapperToIterator;
           }
-          return lodash2;
+          return lodash;
         };
         var _ = runInContext();
         if (typeof define == "function" && typeof define.amd == "object" && define.amd) {
@@ -7397,7 +7397,7 @@
     select: "#chooseMusic"
   });
   var { Howl: Howl2, Howler: Howler2 } = require_howler();
-  var lodash = require_lodash();
+  var { shuffle } = require_lodash();
   var playBtn;
   var playList;
   var playIndex;
@@ -7406,14 +7406,13 @@
   var nextBtn;
   var prevBtn;
   var selectMusic;
-  var musicBank;
   playBtn = document.getElementById("playPause");
   titlePlay = document.getElementById("titleMusic");
   nextBtn = document.getElementById("nextPlay");
   prevBtn = document.getElementById("prevPlay");
   selectMusic = document.getElementById("chooseMusic");
+  var musicBank = window.location.origin + "/audio/";
   playIndex = 0;
-  musicBank = "https://mrtampan.github.io/caem_bank/";
   var howlcore = [];
   extension = "mp3";
   playBtn.addEventListener("click", playPause);
@@ -7424,7 +7423,7 @@
     await fetch(musicBank + "data.json", {
       method: "GET"
     }).then((response) => response.json()).then((result) => {
-      playList = lodash.shuffle(result.music);
+      playList = shuffle(result.music);
       console.log(result.music);
     }).catch((error) => {
       console.error("Error:", error);

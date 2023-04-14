@@ -16,6 +16,8 @@ npm run compile && npm run start
 
 ```
 
+use chrome incognito. because each compile will generate cache
+
 ## Production
 
 ```bash
@@ -31,15 +33,16 @@ Upload all file to hosting
 - Saving internet data usage (because howlerjs decrease size mp3 file)
 - Option Music List
 - Small resource
+- Automatic Shuffle Music List
 
 ## Demo
 
 Audio Player: https://mrtampan.github.io/javascript-audio-player/
 
-Music List: https://mrtampan.github.io/caem_bank/data.json
+Music List: https://mrtampan.github.io/javascript-audio-player/audio/data.json
 
 ## Music Bank
 
-https://github.com/mrtampan/caem_bank
+https://github.com/mrtampan/javascript-audio-player/audio/
 
 You can modify data.json for your music list
