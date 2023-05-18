@@ -30,14 +30,13 @@ Upload all file to hosting
 ## Featured
 
 - Next, Prev, Play, Pause button
-- Saving internet data usage (because howlerjs decrease size mp3 file)
 - Option Music List
 - Small resource
 - Automatic Shuffle Music List
 
 ## Demo
 
-Audio Player: https://mrtampan.github.io/javascript-audio-player/
+Audio Player: https://javascript-audio-player-beta.vercel.app
 
 Music List: https://mrtampan.github.io/javascript-audio-player/audio/data.json
 
